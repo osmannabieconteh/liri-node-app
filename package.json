@@ -22,5 +22,6 @@
     "node-geocoder": "^3.25.0",
     "weather-js": "^2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "keywords": []
 }
