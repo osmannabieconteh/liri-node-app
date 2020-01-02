@@ -1,34 +1,37 @@
+
+
 var axios = require("axios");
 
-// We then run the request with axios module on a URL with a JSON
-axios.get("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy").then(
-    function (response) {
-        // Then we print out the imdbRating
-        console.log("The movie's rating is: " + response.data.imdbRating);
-    }
-);
-axios.get("https://www.npmjs.com/package/node-spotify-api").then(
-    function (response) {
-        console.log("artist rating")
-    }
-);
 
-axios.get("http://www.artists.bandsintown.com/bandsintown-api").then(
-    function (response) {
-        console.log("artist rating")
-    }
-);
+axios.get("https://rest.bandsintown.com/artists/celine+dion/events?app_id=codingbootcamp`").then(
+  function(response) {
+    console.log("The movie's rating is: " + response.data.imdbRating);
+  })
+ axios.get(("https://rest.bandsintown.com/artists/celine+dion/events?app_id=codingbootcamp`").then(
+    function(response) {
+      console.log("The Song's rating is: " + response.data.imdbRating);
+    })
+    .then(
+    function(response) {
+      console.log("The movie's rating is: " + response.data.imdbRating);
+    })
 
 
-axios.get("https://www.npmjs.com/package/moment").then(
-    function (response) {
-        console.log("artist rating")
+  .catch(function(error) {
+    if (error.response) {
+      
+      console.log("---------------Data---------------");
+      console.log(error.response.data);
+      console.log("---------------Status---------------");
+      console.log(error.response.status);
+      console.log("---------------Status---------------");
+      console.log(error.response.headers);
+    } else if (error.request) {
+     
+      console.log(error.request);
+    } else {
+      
+      console.log("Error", error.message);
     }
-);
-
-axios.get("https://www.npmjs.com/package/dotenv").then(
-    function (response) {
-        console.log("artist rating")
-    }
-);
-
+    console.log(error.config);
+  });
